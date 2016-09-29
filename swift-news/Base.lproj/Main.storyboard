@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="kVS-Lu-WzG">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--Swift News-->
+        <scene sceneID="bwU-jO-9jt">
+            <objects>
+                <tableViewController title="Swift News" id="6Lj-ws-4qp" customClass="ViewController" customModule="swift_news" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="PdS-Nz-HUl">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="news" id="sYR-yB-iZk">
+                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="sYR-yB-iZk" id="MC8-iJ-D2V">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="6Lj-ws-4qp" id="a4x-bW-H2s"/>
+                            <outlet property="delegate" destination="6Lj-ws-4qp" id="z6c-4m-2R2"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Swift News" id="2ld-l1-oyk">
+                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="uvT-VU-B7G">
+                            <connections>
+                                <action selector="refresh:" destination="6Lj-ws-4qp" id="CkE-kN-Jiu"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <segue destination="Qpw-Lq-Bpo" kind="show" identifier="detail" id="GqI-6n-XiM"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DO7-Py-trU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="643" y="431"/>
+        </scene>
+        <!--Detail Controller-->
+        <scene sceneID="G6a-pk-dEb">
+            <objects>
+                <viewController id="Qpw-Lq-Bpo" customClass="DetailController" customModule="swift_news" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="cVt-1v-57v"/>
+                        <viewControllerLayoutGuide type="bottom" id="S3K-EZ-Kj6"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="czq-QZ-9lK">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MXx-xO-sEM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1395" y="431"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Ivw-RZ-fbl">
+            <objects>
+                <navigationController id="kVS-Lu-WzG" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="byA-FB-qE3">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="6Lj-ws-4qp" kind="relationship" relationship="rootViewController" id="E7g-Me-fsC"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Geo-fl-Scr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-177" y="431"/>
+        </scene>
+    </scenes>
+</document>
