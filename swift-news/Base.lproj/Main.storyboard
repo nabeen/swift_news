@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Swift News-->
@@ -54,8 +55,24 @@
                     <view key="view" contentMode="scaleToFill" id="czq-QZ-9lK">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" scalesPageToFit="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Tqw-vF-QOu">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
+                                <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES" calendarEvent="YES"/>
+                            </webView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Tqw-vF-QOu" firstAttribute="leading" secondItem="czq-QZ-9lK" secondAttribute="leadingMargin" constant="-20" id="YyQ-cF-B0L"/>
+                            <constraint firstItem="S3K-EZ-Kj6" firstAttribute="top" secondItem="Tqw-vF-QOu" secondAttribute="bottom" id="Z9H-Zm-ClZ"/>
+                            <constraint firstAttribute="trailing" secondItem="Tqw-vF-QOu" secondAttribute="trailing" id="ayG-aT-q79"/>
+                            <constraint firstItem="Tqw-vF-QOu" firstAttribute="top" secondItem="cVt-1v-57v" secondAttribute="bottom" constant="-64" id="sfw-B0-gD3"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="webView" destination="Tqw-vF-QOu" id="egw-VC-TeD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MXx-xO-sEM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
